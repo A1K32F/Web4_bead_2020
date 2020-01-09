@@ -1,8 +1,8 @@
 import EventEmitter from 'events'
 
-class ProductStore extends EventEmitter{
+class CVStore extends EventEmitter{
 
-    _products = [ ];
+    _candidate = [ ];
 
     emitChange(){
         this.emit('change')
@@ -17,4 +17,4 @@ class ProductStore extends EventEmitter{
     }
 }
 
-export  default new ProductStore();
+export  default new CVStore();

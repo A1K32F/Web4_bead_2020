@@ -1,39 +1,39 @@
 import React from 'react';
-import ProductStore from "./ProductStore";
-import ShoppingCartActions from "./ShoppingCartActions";
+import CVStore from "./CVStore";
+import CVCandidateActions from "./CVCandidateActions";
 import logo from "./logo.svg";
 import Alert from "./Alert";
 import './App.css';
 
-class ShoppingCart extends React.Component{
+class CVCandidate extends React.Component{
 
     constructor(props){
         super(props);
         this._onChange = this._onChange.bind(this);
-        this.state = {products : [{fn :'',ln:'',email:'',edu:'',kno:''}]}
+        this.state = {candidate : [{fn :'',ln:'',email:'',edu:'',kno:''}]}
     }
 
     _onChange(){
-        this.setState({products : ProductStore._products});
+        this.setState({candidate : CVStore._candidate});
     }
 
     componentDidMount(){
-        ProductStore.addChangeListener(this._onChange)
+        CVStore.addChangeListener(this._onChange)
     }
 
     componentWillUnmount(){
-        ProductStore.removeChangeListener(this._onChange)
+        CVStore.removeChangeListener(this._onChange)
     }
 
     render(){
-        console.log(this.props.products);
+        console.log(this.props.candidate);
 
         return (
             <table>
                 <tbody>
                     <div>
-                       {this.state.products.map((product)=>{
-                           if(product.fn.length<1)
+                       {this.state.candidate.map((candidate)=>{
+                           if(candidate.fn.length<1)
                            {return (<div>
                            </div>)}
                            else {
@@ -52,7 +52,7 @@ class ShoppingCart extends React.Component{
                                                <label className="control-label col-sm-2">Name: </label>
                                                <div className="col-sm-10">
                                                    <input
-                                                       value={product.fn+" "+product.ln}
+                                                       value={candidate.fn+" "+candidate.ln}
                                                        type='text'
                                                        className="form-control"
                                                    />
@@ -62,7 +62,7 @@ class ShoppingCart extends React.Component{
                                                <label className="control-label col-sm-2">Email: </label>
                                                <div className="col-sm-10">
                                                    <input
-                                                       value={product.email}
+                                                       value={candidate.email}
                                                        type='text'
                                                        className="form-control"
                                                    />
@@ -72,7 +72,7 @@ class ShoppingCart extends React.Component{
                                                <label className="control-label col-sm-2">Education:</label>
                                                <div className="col-sm-10">
                                                    <input
-                                                       value={product.edu}
+                                                       value={candidate.edu}
                                                        type='text'
                                                        className="form-control"
                                                    />
@@ -82,7 +82,7 @@ class ShoppingCart extends React.Component{
                                                <label className="control-label col-sm-2">Knowledge:</label>
                                                <div className="col-sm-10">
                                                    <input
-                                                       value={product.kno}
+                                                       value={candidate.kno}
                                                        type='text'
                                                        className="form-control"
                                                    />
@@ -90,7 +90,7 @@ class ShoppingCart extends React.Component{
                                            </div>
                                            <div className="form-group ">
                                                <div className="col-sm-offset-2 col-sm-10">
-                                                   <button className="btn btn-secondary" onClick={() => {ShoppingCartActions.emptyShoppingCart()}}>Delet</button>
+                                                   <button className="btn btn-secondary" onClick={() => {CVCandidateActions.emptyCVCandidate()}}>Delet</button>
                                                    <button className="btn btn-primary" onClick={Alert}>OK</button>
                                                </div>
                                            </div>
@@ -105,5 +105,5 @@ class ShoppingCart extends React.Component{
     }
 }
 
-export default ShoppingCart;
+export default CVCandidate;
     

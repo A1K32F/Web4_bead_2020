@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import ShoppingCart from './ShoppingCart'
-import ProductForm from "./ProductForm";
+import CVCandidate from './CVCandidate'
+import CandidateForm from "./CandidateForm";
 
 function App() {
   return (
@@ -10,11 +10,11 @@ function App() {
           <table>
               <tr>
                   <td>
-                      <ProductForm/>
+                      <CandidateForm/>
                       <br/>
                   </td>
                   <td>
-                      <ShoppingCart/>
+                      <CVCandidate/>
                   </td>
               </tr>
           </table>

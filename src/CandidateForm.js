@@ -1,9 +1,10 @@
 import React from 'react'
-import ShoppingCartActions from "./ShoppingCartActions";
+import CVCandidateActions from "./CVCandidateActions";
 import logo from "./logo.svg";
 import './App.css';
 
-class ProductForm extends React.Component{
+
+class CandidateForm extends React.Component{
 
     constructor(props) {
         super(props);
@@ -33,7 +34,7 @@ class ProductForm extends React.Component{
     }
 
     handleSubmit(event){
-        ShoppingCartActions.insertProduct({
+        CVCandidateActions.insertCandidate({
             fn :this.state.fn,
             ln:this.state.ln,
             email:this.state.email,
@@ -134,4 +135,4 @@ class ProductForm extends React.Component{
         )
     }
 }
-export default ProductForm
+export default CandidateForm
