@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
-import CVCandidate from './CVCandidate'
+import CVCandidateForm from './CVCandidateForm'
 import CandidateForm from "./CandidateForm";
+
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
                       <br/>
                   </td>
                   <td>
-                      <CVCandidate/>
+                      <CVCandidateForm/>
                   </td>
               </tr>
           </table>

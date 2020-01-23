@@ -2,7 +2,6 @@
 function Alert() {
     return(
                 window.alert("OK")
-
        );
 
 }
